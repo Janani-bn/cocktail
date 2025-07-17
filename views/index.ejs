@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cocktail Explorer</title>
+   <div class="header">
+   <h1 class="my-text" >Welcome to Cocktail Explorer</h1>
+   <h2 class="my-text">Elevate your evening, one sip at a time.</h2>
+   <h3 class="line">Refresh the page for a  different cocktail</h3>
+   </div>
+</head>
+
+<body>
+   <div class="container">
+   <h1 class="drinkName">Drink Name:<br></h1> 
+   <h3 class="value" ><%= locals.drinkName %>🍸</h3><br>
+</div>
+
+<div class="container">
+<h1 class="drinkName">Drink Cataegory: <br></h1>
+<h3 class="value" ><%= locals.drinkCategory %>🥂</h3> <br>
+</div>
+
+<div class="container">
+<h1 class="drinkName">Drink Instructions:<br></h1>
+<h3 class="content"><%= locals.drinkInstructions %></h3><br>
+</div>
+</div>
+<h1 class="container" style="font-size: 2.5rem;">Drink Ingredients:</h1>
+<div class="container">
+   <div class="Ingredients">
+   <li>"Pinch of salt"</li>
+   <%= locals.drinkIngredient1 %>
+   <li><%= locals.drinkIngredient2 %></li>
+   <li><%= locals.drinkIngredient3 %></li>
+   <li><%= locals.drinkIngredient4 %></li>
+   <li>"Rum"</li>
+   </div>
+</div>
+
+<form>
+   <button class="name" formaction="/Quiz">Explore More</button>
+</form>
+
+
+</body>
+
+
+
+
+ <% if(locals.error){ %> 
+    <h2>error <%= locals.error %></h2>
+ <% } %>
+</head>
+
+
+<style>
+   html{
+      background-color: olivedrab;
+   }
+   .my-text {
+    color: black;
+    transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    font-size: 3rem;
+    font-family:'Courier New', Courier, monospace;
+}
+.my-text:hover {
+    color: brown;
+    transform: translateY(-5px);
+}
+p{
+   color:#800020;
+}
+.container{
+   color: #800020;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+body {
+  background-image: url('image.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  height: 100vh;
+  border-radius: 20px;
+}
+.header{
+   text-align: center;
+}
+.drinkName{
+   font-size: 2.5rem;
+}
+.line{
+   font-size: 2rem;
+   color: brown;
+}
+.value{
+   font-size: 2rem;
+}
+.paragraph{
+   font-size: 20px;
+}
+.content{
+   width: 500px;
+}
+.Ingredients{
+   font-size: 2rem;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.name{
+   margin-left: 450px;
+   margin-bottom: 20px;
+   font-size: 2rem;
+   font-family:'Times New Roman', Times, serif;
+   border-radius: 10px;
+}
+
+</style>

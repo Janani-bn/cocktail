@@ -1,0 +1,257 @@
+<h1 class="content">Confused what to drink ?</h1>
+<h1 class="content">No worries ! We got you 😉</h1>
+<h1 class="content">Take this simple quiz 👇🏻</h1>
+
+<div class="quiz-container">
+ <div class="question-block" id="question1">
+            <p class="question"> 1)  Do you have a preference for the base spirit ?</p><br>
+            <div class="options">
+                <label class="option-label" aria-required="true">
+                    <input type="radio" name="q1" value="tequila">
+                    <span class="custom-radio"></span> Tequila
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="vodka">
+                    <span class="custom-radio"></span> Vodka
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="whiskey">
+                    <span class="custom-radio"></span> Whiskey
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="rum">
+                    <span class="custom-radio"></span> Rum
+                </label>
+            </div>
+     </div> 
+ <div class="question-block" id="question2">
+            <p class="question"> 2)  How strong do you prefer your drinks to be?</p><br>
+            <div class="options">
+                <label class="option-label">
+                    <input type="radio" name="q1" value="tequila">
+                    <span class="custom-radio"></span>  Light and refreshing, low alcohol
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="vodka">
+                    <span class="custom-radio"></span>  Moderately strong, balanced with other flavors
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="whiskey">
+                    <span class="custom-radio"></span>  Spirit-forward, you like to taste the alcohol
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="q1" value="rum">
+                    <span class="custom-radio"></span> Non-alcoholic, but with complex flavors
+                </label>
+            </div>
+ </div> 
+
+ <div class="question-block" id="question3">
+    <p class="question"> 3)  What's the occasion or your current mood?</p><br>
+    <div class="options">
+        <label class="option-label">
+            <input type="radio" name="q1" value="tequila">
+            <span class="custom-radio"></span>  Relaxing evening, something smooth and calming
+        </label>
+        <label class="option-label">
+            <input type="radio" name="q1" value="vodka">
+            <span class="custom-radio"></span>   Energetic social gathering, something fun and vibrant
+        </label>
+        <label class="option-label">
+            <input type="radio" name="q1" value="whiskey">
+            <span class="custom-radio"></span> Sophisticated gathering, something classic and elegant
+        </label>
+        <label class="option-label">
+            <input type="radio" name="q1" value="rum">
+            <span class="custom-radio"></span> Hot weather, need something cooling and thirst-quenching
+        </label>
+    </div>
+</div> 
+
+<div class="question-block" id="question4">
+    <p class="question"> 4) What kind of flavors are you generally drawn to? </p><br>
+    <div class="options">
+        <label class="option-label">
+            <input type="radio" name="q1" value="tequila" required>
+            <span class="custom-radio"></span> Sweet & Fruity
+        </label>
+        <label class="option-label">
+            <input type="radio" name="q1" value="vodka" required>
+            <span class="custom-radio"></span> Sour & Tangy 
+        </label>
+        <label class="option-label">
+            <input type="radio" name="q1" value="whiskey"required>
+            <span class="custom-radio"></span>  Bitter & Bold 
+        </label>
+        <label class="option-label">
+            <input type="radio" name="q1" value="rum" required>
+            <span class="custom-radio"></span> Herbal & Aromatic
+        </label>
+    </div>
+</div> 
+
+<form>
+<button id="submitQuiz" formaction="/index2.ejs">Submit Quiz</button>
+        <div id="results"></div>
+</form>
+</div>
+
+<style>
+    .question-block {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.question-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.question {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #CCA43B;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+    user-select: none; /* Prevent text selection on double-click */
+}
+
+.option-label:hover {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+}
+
+/* Hide default radio/checkbox */
+.option-label input[type="radio"],
+.option-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Custom radio button */
+.custom-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 12px;
+    display: inline;
+    position: relative;
+    transition: border-color 0.2s;
+    color: #2196F3;
+}
+
+.custom-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: lightblue; /* Blue check mark */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Custom checkbox */
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    margin-right: 12px;
+    display: inline-block;
+    position: relative;
+    transition: border-color 0.2s;
+}
+
+.custom-checkbox::after {
+    content: '\2713'; /* Checkmark unicode character */
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Styles for checked state */
+.option-label input[type="radio"]:checked + .custom-radio {
+    border-color: #2196F3;
+}
+
+.option-label input[type="radio"]:checked + .custom-radio::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.option-label input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+.option-label input[type="checkbox"]:checked + .custom-checkbox::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Style the whole label when checked for better visual feedback */
+.option-label input[type="radio"]:checked ~ span,
+.option-label input[type="checkbox"]:checked ~ span {
+    color: black; /* You can change text color here */
+}
+
+/* Styles for the whole label when the input inside it is checked */
+.option-label input[type="radio"]:checked {
+    /* Specific styling for the checked radio option's label */
+    background-color: #e0f2f7; /* Light blue background */
+    border-color: #2196F3;
+}
+
+.option-label input[type="checkbox"]:checked {
+    /* Specific styling for the checked checkbox option's label */
+    background-color: #e0f2f7; /* Light blue background */
+    border-color: #2196F3;
+}
+#submitQuiz {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#submitQuiz:hover {
+    background-color: #45a049;
+}
+h1{
+    text-align: center;
+}
+html{
+    background-color: #004d40;
+}
+</style>
