@@ -1,7 +1,7 @@
 import express from "express";
 import axios from "axios";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.static("viwes"));
 
 const API_URL_name = "https://thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
@@ -52,9 +52,10 @@ app.get("/", async (req,res) =>{
         res.render("Quiz.ejs");
     });
 
-app.listen(port , () =>{
-    console.log(`Server running on port ${port}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
+
 
 app.get("/index2.ejs", async (req,res) =>{
     const response = await axios.get(API_URL_random);
