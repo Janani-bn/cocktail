@@ -2,12 +2,12 @@
   "name": "COCKTAIL-EXPLORER",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+  "start": "node index.js"
+}
   "dependencies": {
     "axios": "^1.10.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
-    "scripts": {
-  "start": "node index.js"
-}
   }
 }
